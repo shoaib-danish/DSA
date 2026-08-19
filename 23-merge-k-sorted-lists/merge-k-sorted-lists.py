@@ -13,14 +13,9 @@ class Solution:
 
             for i in range(0, len(lists), 2):
                 list1 = lists[i]
+                list2 = lists[i + 1] if i + 1 < len(lists) else None
 
-                if i + 1 < len(lists):
-                    list2 = lists[i + 1]
-                else:
-                    list2 = None
-
-                merged_list = self.mergeTwoLists(list1, list2)
-                merged_lists.append(merged_list)
+                merged_lists.append(self.mergeTwoLists(list1, list2))
 
             lists = merged_lists
 
